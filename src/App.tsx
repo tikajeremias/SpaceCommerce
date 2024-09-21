@@ -1,11 +1,16 @@
-import ThemeToggle from "./components/ThemeToggle"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home";
+import Login from './pages/Login';
 
 function App() {
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen text-gray-800 dark:text-gray-100 flex justify-center items-start w-full h-full pt-12">
-      <ThemeToggle />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   )
 }
 
