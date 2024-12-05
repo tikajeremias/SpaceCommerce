@@ -11,11 +11,11 @@ export default function Navbar() {
     }
 
     return (
-        <div className="fixed w-full h-16 top-0 flex justify-center items-center">
-            <div className="w-[70%] h-full bg-white dark:bg-gray-900 flex justify-between items-center py-2">
+        <div className="fixed z-10 w-full bg-white dark:bg-gray-900 h-16 top-0 flex justify-center items-center">
+            <div className="w-[70%] h-full flex justify-between items-center py-2">
                 <div className="h-full w-fit flex items-center justify-start">
                     <img className='h-full p-2' src={Logo} />
-                    <h1 className='text-gray-900 font-semibold dark:text-white'>Space Commerce</h1>
+                    <h1 className='text-gray-900 font-semibold dark:text-white'>Space Travel</h1>
                 </div>
                 <div className="h-full w-fit flex items-center justify-start gap-10">
                     <h1 className='text-gray-900 font-semibold dark:text-white cursor-pointer'>Create Account</h1>

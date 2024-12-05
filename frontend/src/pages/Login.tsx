@@ -10,12 +10,12 @@ export default function Login() {
     }
 
     return (
-        <div className="bg-white dark:bg-gray-900 min-h-screen text-gray-800 dark:text-gray-100 flex justify-center items-center w-full h-full pb-16">
-            <div className="p-12 bg-slate-200 flex flex-col gap-4 rounded-md text-center items-center justify-center">
+        <div className="bg-[#e2e8f0] dark:bg-gray-900 min-h-screen text-gray-800 dark:text-gray-100 flex justify-center items-center w-full h-full pb-16">
+            <div className="p-12 bg-white flex flex-col gap-4 rounded-md text-center items-center justify-center">
                 <img className='w-24 h-24 p-2' src={Logo} />
                 <h1 className='text-gray-900 dark:text-white font-semibold'>Space Commerce</h1>
-                <input className='bg-slate-200 border border-slate-500 text-slate-500 placeholder:text-slate-500 rounded-md px-1 py-2 w-full' placeholder='Username' />
-                <input className='bg-slate-200 border border-slate-500 text-slate-500 placeholder:text-slate-500 rounded-md px-1 py-2 w-full' placeholder='Password' />
+                <input className='bg-white border border-slate-500 text-slate-500 placeholder:text-slate-500 rounded-md px-1 py-2 w-full' placeholder='Username' />
+                <input className='bg-white border border-slate-500 text-slate-500 placeholder:text-slate-500 rounded-md px-1 py-2 w-full' placeholder='Password' />
                 <div className='flex flex-row w-full justify-between items-center gap-10'>
                     <h1 className='text-gray-900 font-semibold dark:text-white'>Forgot password</h1>
                     <h1 className='text-gray-900 font-semibold dark:text-white'>Create Account</h1>
