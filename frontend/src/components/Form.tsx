@@ -1,98 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { SearchIcon } from 'lucide-react';
 
-export default function Form() {
-    const [formData, setFormData] = useState({
-        nombre: '',
-        email: '',
-        fechaIda: '',
-        fechaVuelta: '',
-    });
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData(prevData => ({
-            ...prevData,
-            [name]: value
-        }));
-    };
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aquí puedes implementar la lógica de búsqueda
+    console.log('Buscando:', searchTerm);
+  };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log(formData)
-    };
+  return (
+    <form onSubmit={handleSearch} className="flex items-center w-full">
+      <div className="relative w-full">
+        <input
+          type="text"
+          className="w-full px-4 py-2 text-gray-900 placeholder-gray-500 bg-white border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+          placeholder="Buscar..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <button
+        type="submit"
+        className="px-4 py-2 text-white bg-gray-800 rounded-r-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+      >
+        <SearchIcon className="w-5 h-5" />
+      </button>
+    </form>
+  );
+};
 
+export default SearchBar;
 
-    return (
-        <form onSubmit={handleSubmit} className="w-full md:w-1/2 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <h2 className="text-2xl font-bold mb-6 text-center">Reserva tu Viaje Interplanetario</h2>
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">
-                    Nombre completo
-                </label>
-                <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="nombre"
-                    type="text"
-                    placeholder="Tu nombre"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
-            <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                    Email
-                </label>
-                <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email"
-                    type="email"
-                    placeholder="tu@email.com"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                />
-            </div>
-            <div className='flex flex-row w-full justify-center items-center gap-4 mb-4'>
-                <div className="w-full">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fechaIda">
-                        Fecha de ida
-                    </label>
-                    <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="fechaIda"
-                        type="date"
-                        name="fechaIda"
-                        value={formData.fechaIda}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-                <div className="w-full">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fechaVuelta">
-                        Fecha de vuelta
-                    </label>
-                    <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="fechaVuelta"
-                        type="date"
-                        name="fechaVuelta"
-                        value={formData.fechaVuelta}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-            </div>
-            <div className="flex items-center justify-between">
-                <button
-                    className="bg-neutral-900 hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit"
-                >
-                    Reservar Viaje
-                </button>
-            </div>
-        </form>
-    )
-}

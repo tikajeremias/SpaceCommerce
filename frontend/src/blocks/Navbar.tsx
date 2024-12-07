@@ -15,7 +15,7 @@ export default function Navbar() {
             <div className="w-[70%] h-full flex justify-between items-center py-2">
                 <div className="h-full w-fit flex items-center justify-start">
                     <img className='h-full p-2' src={Logo} />
-                    <h1 className='text-gray-900 font-semibold dark:text-white'>Space Travel</h1>
+                    <h1 className='text-gray-900 font-semibold dark:text-white'>Space Commerce</h1>
                 </div>
                 <div className="h-full w-fit flex items-center justify-start gap-10">
                     <h1 className='text-gray-900 font-semibold dark:text-white cursor-pointer'>Create Account</h1>
